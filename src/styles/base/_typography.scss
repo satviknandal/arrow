@@ -1,0 +1,36 @@
+/*
+ * Base
+ * @ Typography
+ *
+*/
+
+@mixin heading-6 {
+  @include NunitoNormal();
+  @include font-size($h6-m-size);
+  letter-spacing: normal;
+  line-height: normal;
+
+  @include tablet {
+    @include font-size($h6-tp-size);
+  }
+}
+
+@mixin body-text-1() {
+  @include NunitoNormal;
+  @include font-size($bt1-m-size);
+  line-height: normal;
+  letter-spacing: normal;
+
+  @include tablet {
+    @include font-size($bt1-tp-size);
+  }
+}
+
+h6,
+.heading-6 {
+  @include heading-6;
+}
+
+.body-text-1 {
+  @include body-text-1;
+}

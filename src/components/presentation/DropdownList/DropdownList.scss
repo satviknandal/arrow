@@ -1,0 +1,66 @@
+@import "../../../styles/styles.scss";
+
+.dropdown-list {
+  $blk: &;
+  position: relative;
+  width: 100%;
+
+  &--expanded {
+    #{$blk}__list {
+      display: block;
+    }
+  }
+
+  &__list {
+    @include rem(padding, 4px 0px);
+    @include rem(top, 48px);
+    @include rem(border-radius, 5px);
+    @include rem(max-height, 128px);
+    box-shadow: 0 0 20px 0 rgba(52, 52, 52, 0.11);
+    width: 100%;
+    position: absolute;
+    display: none;
+    background-color: $white;
+    z-index: $z-index-tab-dropdown;
+    box-sizing: border-box;
+    overflow: auto;
+
+    @include tablet {
+      @include rem(padding, 6px 0px);
+      @include rem(top, 49px);
+      @include rem(max-height, 132px);
+    }
+
+    > li {
+      @include body-text-1();
+      @include flex-row-aic;
+      @include rem(height, 24px);
+      @include rem("padding", 4px 0px);
+      color: $arrow-primary-gray-2;
+      width: 100%;
+      box-sizing: border-box;
+      height: auto;
+
+      &:hover {
+        background-color: $light-gray-3;
+      }
+
+      .flag.card {
+        @include rem(background-position, 0px 5px);
+      }
+      > button {
+        outline-offset: -4px;
+        @include rem(padding, 0px 16px);
+        width: 100%;
+        height: 100%;
+        color: inherit;
+        text-align: left;
+        font-size: inherit;
+
+        @include tablet {
+          @include rem(padding, 0px 20px);
+        }
+      }
+    }
+  }
+}

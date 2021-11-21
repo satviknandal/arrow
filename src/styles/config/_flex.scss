@@ -1,0 +1,147 @@
+/*
+ * Common Flexbox Layouts
+   Acronyms:
+    1. wrap -> flex-wrap: wrap
+    2. ai -> align-items
+    3. jc -> justify-content
+     optionally appended by:
+      a. c -> center
+      b. sb -> space-between
+
+   Add on according to the above rules should any other
+   flexbox layouts be used frequently in the future
+ */
+
+@mixin flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin flex-row {
+  @include flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+@mixin flex-row-wrap {
+  @include flex-row;
+  flex-wrap: wrap;
+}
+
+@mixin flex-row-nowrap {
+  @include flex-row;
+  flex-wrap: nowrap;
+}
+
+@mixin flex-row-aic {
+  @include flex-row;
+  align-items: center;
+}
+
+@mixin flex-row-aic-wrap {
+  @include flex-row-aic;
+  flex-wrap: wrap;
+}
+
+@mixin flex-row-jcc {
+  @include flex-row;
+  justify-content: center;
+}
+
+@mixin flex-row-jcc-wrap {
+  @include flex-row-jcc;
+}
+
+@mixin flex-row-jcsb {
+  @include flex-row;
+  justify-content: space-between;
+}
+
+@mixin flex-row-aic-jcc {
+  @include flex-row;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-row-aic-jcc-wrap {
+  @include flex-row-aic-jcc;
+  flex-wrap: wrap;
+}
+
+@mixin flex-row-aic-jcsb {
+  @include flex-row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-row-aic-jcsb-wrap {
+  @include flex-row-aic-jcsb;
+  flex-wrap: wrap;
+}
+
+@mixin flex-col {
+  @include flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+@mixin flex-col-aic {
+  @include flex-col;
+  align-items: center;
+}
+
+@mixin flex-col-aie {
+  @include flex-col;
+  align-items: flex-end;
+}
+
+@mixin flex-col-aic-wrap {
+  @include flex-col-aic;
+  flex-wrap: wrap;
+}
+
+@mixin flex-col-jcc {
+  @include flex-col;
+  justify-content: center;
+}
+
+@mixin flex-col-jcc-wrap {
+  @include flex-col-jcc;
+  flex-wrap: wrap;
+}
+
+@mixin flex-col-jcsb {
+  @include flex-col;
+  justify-content: space-between;
+}
+
+@mixin flex-col-jcsb-wrap {
+  @include flex-col-jcsb;
+  flex-wrap: wrap;
+}
+
+@mixin flex-col-aic-jcc {
+  @include flex-col;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-col-aic-jcc-wrap {
+  @include flex-col-aic-jcc;
+  flex-wrap: wrap;
+}
+
+@mixin flex-col-aic-jcsb {
+  @include flex-col;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-col-aic-jcsb-wrap {
+  @include flex-col-aic-jcsb;
+  flex-wrap: wrap;
+}

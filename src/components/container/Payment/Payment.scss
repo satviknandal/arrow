@@ -1,0 +1,90 @@
+@import "../../../styles/styles.scss";
+
+.flag {
+  content: " ";
+  display: inline-block;
+  vertical-align: middle;
+
+  margin-left: 20px;
+}
+.flag.SG {
+  width: 40px;
+  height: 25px;
+  background: no-repeat center url("../../../icons/country-icons.png");
+  background-position: 0 5px;
+}
+.flag.card,
+.flag.paynow {
+  width: 25px;
+  height: 25px;
+  background: no-repeat center url("../../../icons/card.png");
+  background-position: 0 8px;
+}
+
+.payment {
+  padding: 0 20px;
+  @include tablet {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    width: 480px;
+    max-width: 480px;
+  }
+  h6 {
+    @include spacing;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: left;
+    margin-top: 16px;
+    font-weight: $font-weight-semi-bold;
+    color: $arrow-primary-gray-2;
+  }
+
+  &-billing {
+    @include border-box;
+    @include spacing;
+    &_name {
+      display: flex;
+      border-top: 1px solid $arrow-primary-gray-1;
+      border-bottom: 1px solid $arrow-primary-gray-1;
+
+      > div:first-child {
+        border-right: 1px solid $arrow-primary-gray-1;
+      }
+    }
+    &_country {
+      display: flex;
+      > div:first-child {
+        width: 25%;
+      }
+    }
+  }
+  &-address {
+    @include border-box;
+    display: flex;
+
+    > div:first-child {
+      width: 25%;
+    }
+  }
+  &-card,
+  &-cardnumber {
+    @include border-box;
+    &--cvv {
+      display: flex;
+      border-top: 1px solid $arrow-primary-gray-1;
+
+      > div:first-child {
+        border-right: 1px solid $arrow-primary-gray-1;
+        text-align: left;
+      }
+    }
+  }
+  &-card {
+    @include spacing;
+  }
+  &-confirm {
+    @include rem(margin-top, 40px);
+    width: 100%;
+  }
+}

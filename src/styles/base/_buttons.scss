@@ -1,0 +1,57 @@
+// Button Base styles
+
+div.btn {
+  display: inline-flex;
+  box-sizing: border-box;
+
+  > button {
+    @include NunitoNormal();
+    @include rem(font-size, $button-m-font-size);
+    border-radius: $button-m-border-radius;
+    padding: $button-m-padding;
+    font-weight: $font-weight-normal;
+    display: block;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    box-sizing: border-box;
+    width: 100%;
+    text-transform: uppercase;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    @include tablet {
+      @include rem(font-size, $button-tl-font-size);
+      border-radius: $button-tl-border-radius;
+    }
+  }
+
+  &--primary {
+    > button {
+      background-color: $black;
+      color: $white;
+      letter-spacing: 2px;
+
+      &:not(:disabled):hover {
+        border-color: $white;
+        background-color: $pa-primary-red;
+        color: $white;
+      }
+
+      &.disabled,
+      &.disabled:hover {
+        background-color: $black;
+        color: rgba(255, 255, 255, 0.6);
+        cursor: not-allowed;
+      }
+
+      &::after {
+        content: url("../../icons/arrow.png");
+        left: 10px;
+        top: 2px;
+        position: relative;
+      }
+    }
+  }
+}

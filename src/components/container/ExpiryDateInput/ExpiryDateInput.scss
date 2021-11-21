@@ -1,0 +1,35 @@
+@import "../../../styles/styles.scss";
+
+.expirydate {
+  @include body-text-1;
+  position: relative;
+  display: block;
+  width: 100%;
+  cursor: text;
+
+  input {
+    height: 56px;
+    @include body-text-1;
+    color: $arrow-primary-gray-2;
+  }
+
+  &-date {
+    width: 27px;
+    outline: 0;
+    border: 0;
+    background: transparent;
+    padding: 0 13px 0 16px;
+
+    &::placeholder {
+      color: $arrow-primary-gray-2;
+    }
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  &-seperator {
+    left: 25%;
+    color: $arrow-primary-gray-2;
+  }
+}

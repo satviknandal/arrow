@@ -1,0 +1,23 @@
+/*
+ * @ Fonts
+ *
+*/
+
+@include font-face("Nunito", "Nunito-Regular", 400);
+
+$base-font-family: "Open Sans", sans-serif;
+$nunito-font-family: "Nunito", $base-font-family;
+
+@mixin OpenSansNormal() {
+  font-family: $base-font-family;
+  font-weight: $font-weight-normal;
+}
+
+@mixin NunitoNormal() {
+  font-family: $nunito-font-family;
+  font-weight: $font-weight-normal;
+}
+
+body {
+  @include NunitoNormal();
+}

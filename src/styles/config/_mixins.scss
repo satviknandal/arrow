@@ -1,0 +1,156 @@
+/*
+ * Font Face
+ */
+$fonts-file-path: "../../fonts/";
+
+@mixin font-face($font-family, $file-name, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    //  font-weight: $weight;
+    font-style: $style;
+    src: url(#{$fonts-file-path}#{$file-name}.eot) format("embedded-opentype");
+    src: url(#{$fonts-file-path}#{$file-name}.woff2) format("woff2"),
+      url(#{$fonts-file-path}#{$file-name}.woff) format("woff"),
+      url(#{$fonts-file-path}#{$file-name}.ttf) format("truetype"),
+      url(#{$fonts-file-path}#{$file-name}.eot?#iefix)
+        format("embedded-opentype");
+    font-display: swap;
+  }
+}
+
+/*
+  border-box mixin
+*/
+@mixin border-box {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
+  border-radius: 15px;
+  border: 1px solid $arrow-primary-gray-1;
+}
+
+@mixin spacing {
+  margin-bottom: 10px;
+}
+
+/*
+  Convert px to rem, when px is specified
+*/
+@mixin rem($property, $values) {
+  $px: ();
+  $rem: ();
+  @each $value in $values {
+    @if (isNumber($value)) {
+      $unit: unit($value);
+      $val: parseNumber($value);
+      @if $val == 0 {
+        $px: append($px, $val);
+        $rem: append($rem, $val);
+      } @else if $unit == "px" {
+        $px: append($px, $value);
+        $rem: append($rem, ($val / parseNumber($base-font-size) + rem));
+      } @else if $unit == "rem" {
+        $px: append($px, ($val * parseNumber($base-font-size) + px));
+        $rem: append($rem, $value);
+      }
+      @if $unit == "%" {
+        $px: append($px, #{$val + "%"});
+        $rem: append($rem, #{$val + "%"});
+      }
+    } @else {
+      $px: append($px, $value);
+      $rem: append($rem, $value);
+    }
+  }
+  @if $px == $rem {
+    #{$property}: $px;
+  } @else {
+    #{$property}: $px;
+    #{$property}: $rem;
+  }
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: pxToRem($size);
+}
+
+/*
+
+ * Desktop (PC's)
+ */
+
+@mixin desktop {
+  /* Medium devices (desktops, 1024px and up) */
+  @media only screen and (min-width: $large) {
+    @content;
+  }
+}
+
+@mixin desktop-lg {
+  /* devices (large desktops, 1366px to up) */
+  @media (min-width: $desktop-lg) {
+    @content;
+  }
+}
+
+/*
+ * Wide screen Desktop (PC's)
+ */
+
+@mixin desktop-xl {
+  /* Medium devices (desktops, 1200px and up) */
+  @media only screen and (min-width: $extra-large) {
+    @content;
+  }
+}
+
+/*
+ * Tablet
+ */
+
+@mixin tablet {
+  /* devices (tablets, 768px and up) */
+  @media only screen and (min-width: $medium) {
+    @content;
+  }
+}
+
+@mixin tablet-pt {
+  /* devices (tablets(portrait), 768px and up) */
+  @media only screen and (min-width: $medium) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin tablet-ls {
+  /* devices (tablets(landscape) & small desktops, 1024px and up) */
+  @media only screen and (min-width: $large) and (orientation: landscape) {
+    @content;
+  }
+}
+
+/*
+ * Mobile
+ */
+
+@mixin mobile {
+  /* devices (mobiles, 320px and up) */
+  @media only screen and (min-width: $x-small) {
+    @content;
+  }
+}
+
+@mixin mobile-pt {
+  /* devices (mobiles(portrait), 320px and up) */
+  @media only screen and (min-width: $x-small) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin mobile-ls {
+  /* devices (mobiles(landscape) 320px and up) */
+  @media only screen and (min-width: $x-small) and (orientation: landscape) {
+    @content;
+  }
+}

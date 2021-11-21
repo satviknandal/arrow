@@ -1,0 +1,73 @@
+@import "../../../../styles/styles.scss";
+
+.st-text-input {
+  width: 100%;
+  position: relative;
+
+  &--img {
+    position: absolute;
+    @include rem("top", 12px);
+    left: -5px;
+
+    @include tablet {
+      left: 0;
+    }
+  }
+
+  &--nomargin {
+    input {
+      padding-left: 0;
+    }
+  }
+
+  &__icon {
+    @include rem("top", 15px);
+    @include rem("right", 12px);
+    pointer-events: none;
+    position: absolute;
+    display: none;
+
+    @include tablet {
+      @include rem("right", 16px);
+    }
+
+    .st-text-input--has-dropdown-arrow &,
+    .st-text-input--has-input-icon & {
+      display: block;
+    }
+  }
+  &__input {
+    @include body-text-1();
+    @include rem("height", 56px);
+    @include rem("border-radius", 15px);
+    padding: 0 16px;
+    border: 0;
+    outline: none;
+    color: $arrow-primary-gray-2;
+    width: 100%;
+    box-sizing: border-box;
+    line-height: normal;
+
+    .st-text-input--has-dropdown-arrow & {
+      cursor: pointer;
+    }
+
+    @include tablet {
+      @include rem("padding", 20px);
+    }
+
+    &:not(:only-child) {
+      @include rem("padding-right", 52px);
+
+      @include tablet {
+        @include rem("padding-right", 56px);
+      }
+    }
+
+    &--img {
+      @include rem("padding-left", 55px);
+      font-weight: $font-weight-semi-bold;
+      color: $black;
+    }
+  }
+}

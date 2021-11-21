@@ -1,0 +1,77 @@
+/*
+ * Config
+ * @ Variables
+ *
+*/
+
+$z-index-tab-dropdown: 10 !default;
+
+/*
+ *  Arrow base Font size
+*/
+
+$base-font-size: 16px !default;
+$base-font-size-mobile: 16px !default;
+
+/*
+ *  Desktop heading sizes
+*/
+
+$h6-size: 14px !default;
+$bt1-size: 16px !default; // body text 1 font
+
+/*
+ *  Mobile heading sizes
+*/
+$h6-m-size: 14px !default;
+$bt1-m-size: 16px !default;
+
+/*
+ * header fonts tablets(landscape) and small desktop
+ */
+$h6-tl-size: 14px !default;
+$bt1-tl-size: 16px !default;
+
+/*
+ * header fonts tablets(portrait)
+ */
+$h6-tp-size: 14px !default;
+$bt1-tp-size: 16px !default;
+
+/*
+ *  Heading weight sizes
+*/
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+
+/*
+ *  Breakpoints
+ */
+
+//mobile portait max
+$x-small: 320px;
+//mobile max
+$small: 767px;
+//tab
+$medium: 768px;
+//desktop
+$large: 1024px;
+//wide-screen
+$extra-large: 1200px;
+//large desktop
+$desktop-lg: 1366px;
+
+/*
+ *  Radius
+*/
+
+$base-radius: 4px !default;
+$base-rounded-radius: 28px !default;
+$button-m-border-radius: 15px;
+$button-tl-border-radius: 10px;
+$button-m-font-size: 16px !default;
+$button-tl-font-size: 16px !default;
+$button-m-padding: 14px 31px;
